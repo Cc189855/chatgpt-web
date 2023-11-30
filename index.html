@@ -2475,9 +2475,10 @@
                                     <label for="preSetSystem" data-i18n-key="presetRole"></label>
                                     <select id="preSetSystem">
                                         <option value="default" data-i18n-key="default"></option>
-                                        <option value="chanyu" data-i18n-key="chanyu"></option>
                                         <option value="normal" data-i18n-key="assistant"></option>
                                         <option value="cat" data-i18n-key="cat"></option>
+                                        <option value="chanyu" data-i18n-key="chanyu"></option>
+                                        <option value="tele" data-i18n-key="tele"></option>
                                         <option value="emoji" data-i18n-key="emoji"></option>
                                         <option value="image" data-i18n-key="withImg"></option>
                                     </select>
@@ -3281,15 +3282,17 @@
                 "systemRole": "系统角色",
                 "presetRole": "预设角色",
                 "default": "默认",
-                "chanyu": "每日禅语-朋友圈",
                 "assistant": "法师",
                 "cat": "和尚",
+                "chanyu": "每日禅语-朋友圈",
+                "tele": "取标题",
                 "emoji": "快手审核官",
                 "withImg": "抖音审核官",
                 "defaultText": "",
-                "chanyuText": "请你充当文案写手，以佛教徒的风格帮我写佛教语录、佛教禅语、佛教早晨问候语、佛教朋友圈文案",
                 "assistantText": "请你充当法师，以佛教徒风格回答问题。尊称我为施主。自称为贫僧。回答问题简单明了。使用佛教常用词。请不要出现佛教两个字。末尾加上阿弥陀佛🙏🙏🙏",
                 "catText": "请你充当法师，以佛教徒风格回答问题。回答问题简单明了。使用佛教常用词。请不要出现佛教两个字。",
+                "chanyuText": "请你充当文案写手，以佛教徒的风格帮我写佛教语录、佛教禅语、佛教早晨问候语、佛教朋友圈文案",
+                "teleText": "请你充当编辑，帮我结合文案想一个通俗易懂、吸引人、正能量的标题",
                 "emojiText": "请你充当快手短视频审核官，以快手社区规范为准则，帮我列出文案中那些文字会涉及敏感字眼、违规、涉及违背公序良俗。并告诉我原因",
                 "imageText": "请你充当抖音短视频审核官，以抖音社区规范为准则，帮我列出文案中那些文字会涉及敏感字眼、违规、涉及违背公序良俗。并告诉我原因",
                 "nature": "角色性格",
@@ -4354,9 +4357,10 @@
         let loading = false;
         let presetRoleData = {
             "default": translations[locale]["defaultText"],
-            "chanyu": translations[locale]["chanyuText"],
             "normal": translations[locale]["assistantText"],
             "cat": translations[locale]["catText"],
+            "chanyu": translations[locale]["chanyuText"],
+            "tele": translations[locale]["teleText"],
             "emoji": translations[locale]["emojiText"],
             "image": translations[locale]["imageText"]
         };
@@ -6954,7 +6958,7 @@
             setTimeout(() => {
                 downRoleController.abort();
             }, 10000);
-            preEle.options.length = 6;
+            preEle.options.length = 7;
             if (locale === "zh") {
                 fetch("https://cdn.jsdelivr.net/gh/PlexPt/awesome-chatgpt-prompts-zh/prompts-zh.json", {
                     signal: downRoleController.signal
