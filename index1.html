@@ -3299,7 +3299,7 @@
                 "systemRole": "系统角色",
                 "presetRole": "预设角色",
                 "default": "默认",
-                "defaultText": "",
+                "defaultText": "请你充当法师，以佛教徒风格回答问题。回答问题简单明了。使用佛教常用词。请不要出现佛教两个字。",
                 "nature": "角色性格",
                 "natureNeg": "准确严谨",
                 "naturePos": "灵活创新",
@@ -7567,7 +7567,7 @@
             setTimeout(() => {
                 downRoleController.abort();
             }, 10000);
-            preEle.options.length = 5;
+            preEle.options.length = 1;
             if (locale === "zh") {
                 fetch("https://cdn.jsdelivr.net/gh/Cc189855/chatgpt-web/prompts-zh.json", {
                     signal: downRoleController.signal
