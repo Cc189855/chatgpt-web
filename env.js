@@ -1,1 +1,1 @@
-envAPIEndpoint="https://api.openai-hk.com"
+envAPIEndpoint="https://api.chatweb.plus"
